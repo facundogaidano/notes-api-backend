@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1yRmFrb24iLCJpZCI6IjY1YzY2YTQ4Y2ViMTYzYzFjYjBkMGJkMSIsImlhdCI6MTcwNzUwMjMzMH0.Sl-4MeXhyMonte3izrPpaE5mmT8kitxP3aHXuLVMZmA
+
+{
+    "content": "Another note made by the same userId",
+    "important": true,
+    "userId": "65c66a48ceb163c1cb0d0bd1"
+}

@@ -79,9 +79,11 @@ describe('viewing a specific note', () => {
 
 describe('addition of a new note', () => {
   let userId
+  let token
 
   beforeAll(async () => {
     userId = await helper.createUser() // Obtiene el ID del usuario creado
+    token = await helper.getTokenForUser(userId) // Get users ID token.
   })
 
   test('succeeds with valid data', async () => {
@@ -93,6 +95,7 @@ describe('addition of a new note', () => {
 
     await api
       .post('/api/notes')
+      .set('Authorization', `Bearer ${token}`)
       .send(newNote)
       .expect(200)
       .expect('Content-Type', /application\/json/)
@@ -114,6 +117,7 @@ describe('addition of a new note', () => {
 
     await api
       .post('/api/notes')
+      .set('Authorization', `Bearer ${token}`)
       .send(newNote)
       .expect(400)
 
